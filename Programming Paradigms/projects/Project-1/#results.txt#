@@ -1,0 +1,128 @@
+; SLIME 2015-08-24; Loading #P"/home/js637496/CSC345/Project-1/integrate.lisp".
+
+CL-USER> (t1)
+
+; In: LAMBDA (F V)
+
+;   (NIL)
+; Warning: Function called with zero arguments, but wants exactly two.
+; FUNCTION: 1
+VARIABLE: X
+ RESULT: X
+
+NIL
+CL-USER> (t2)
+FUNCTION: 1
+VARIABLE: Y
+ RESULT: 3
+
+NIL
+CL-USER> (t3)
+FUNCTION: Z
+VARIABLE: Z
+ RESULT: (/ (EXPT Z 2) 2)
+
+NIL
+CL-USER> (t4)
+FUNCTION: (+ X 0)
+VARIABLE: X
+ RESULT: (/ (EXPT X 2) 2)
+
+NIL
+CL-USER> (t5)
+FUNCTION: (- X)
+VARIABLE: X
+ RESULT: -4
+
+NIL
+CL-USER> (t6)
+FUNCTION: (- - X)
+VARIABLE: X
+ RESULT: 15/2
+
+NIL
+CL-USER> (t7)
+FUNCTION: (- X)
+VARIABLE: X
+ RESULT: (- (/ (EXPT X 2) 2))
+
+NIL
+CL-USER> (t8)
+FUNCTION: (- - X)
+VARIABLE: X
+ RESULT: (/ (EXPT X 2) 2)
+
+NIL
+CL-USER> (t9)
+FUNCTION: (- - - X)
+VARIABLE: X
+ RESULT: (- (/ (EXPT X 2) 2))
+
+NIL
+CL-USER> (t10)
+FUNCTION: (+ X (- X))
+VARIABLE: X
+ RESULT: 0
+
+NIL
+CL-USER> (t11)
+FUNCTION: (- (+ (- - X) X))
+VARIABLE: X
+ RESULT: -15
+
+NIL
+CL-USER> (t12)
+FUNCTION: (+ (+ (- - X) (+ X 3)) 2)
+VARIABLE: X
+ RESULT: 52
+
+NIL
+CL-USER> (t13)
+FUNCTION: (- X (EXPT X 3))
+VARIABLE: X
+ RESULT: (- (/ (EXPT X 2) 2) (/ (EXPT X 4) 4))
+
+NIL
+CL-USER> (t14)
+FUNCTION: (- X (EXPT X 3))
+VARIABLE: X
+ RESULT: -567/4
+
+NIL
+CL-USER> (t15)
+FUNCTION: (+ (+ X (- - - X)) (EXPT X 3))
+VARIABLE: X
+ RESULT: (/ (EXPT X 4) 4)
+
+NIL
+CL-USER> (t16)
+FUNCTION: (+ (- X (- X)) (EXPT X 3))
+VARIABLE: X
+ RESULT: 85/4
+
+NIL
+CL-USER> (t17)
+FUNCTION: (EXPT X -1)
+VARIABLE: X
+ RESULT: (LOG X)
+
+NIL
+CL-USER> (t18)
+FUNCTION: (EXPT X -1)
+VARIABLE: X
+ RESULT: 2.7080503
+
+NIL
+CL-USER> (t19)
+FUNCTION: (+ (+ X (- 5 X)) (EXPT X -1))
+VARIABLE: X
+ RESULT: (+ (+ (/ (EXPT X 2) 2) (- (* 5 X) (/ (EXPT X 2) 2))) (LOG X))
+
+NIL
+CL-USER> (t20)
+FUNCTION: (+ (+ X (- 5 X)) (EXPT X -1))
+VARIABLE: X
+ RESULT: 1063.7704
+
+NIL
+CL-USER> (integrate '1 'x)

@@ -1,0 +1,60 @@
+Fixing TRACE for Recursion in CMUCL
+
+
+By default TRACE does not work in CMUCL as you might expect.
+
+Consider, for example:
+
+  (defun lenn (l)
+    (if (endp l)
+           0
+     (1+ (lenn (rest l)))))
+
+CL-USER> (trace lenn)    ;; trace lenn
+(LENN)
+
+CL-USER> (lenn '(q w e r))
+  0: (LENN (Q W E R))
+  0: LENN returned 4
+4
+
+CL-USER>
+
+We might have wanted to see all of the tracing, including all the recursive
+calls.
+
+In CMUCL, local call is used when a function defined by defun calls itself.
+This use of local call speeds recursion, but can also complicate debugging,
+since trace will only show the first call to lenn, and not the recursive
+calls. This is because the recursive calls directly jump to the start of the
+function, and don't indirect through the symbol-function. Self-recursive
+local call is inhibited when the :block-compile argument to compile-file is
+nil.
+
+So to see all the recusive calls, try this -- where the code is in, say,
+hwk1.lisp
+
+CL-USER>  (compile-file "hwk1" :block-compile nil)  ;; compile file
+.....
+
+CL-USER> (load *)                                   ;; load the compiled file
+.......
+
+CL-USER> (trace lenn)                               ;; trace LENN
+(LENN)
+
+CL-USER> (lenn '(q w e r))                          ;; trace a call
+  0: (LENN (Q W E R))
+    1: (LENN (W E R))
+      2: (LENN (E R))
+        3: (LENN (R))
+          4: (LENN NIL)
+          4: LENN returned 0
+        3: LENN returned 1
+      2: LENN returned 2
+    1: LENN returned 3
+  0: LENN returned 4
+4
+CL-USER>
+
+

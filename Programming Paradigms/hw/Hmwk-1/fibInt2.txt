@@ -1,0 +1,159 @@
+; SLIME 2015-08-24; Loading #P"/home/js637496/CSC345/Hmwk-1/homework.lisp".
+; Loading #P"/home/js637496/CSC345/Course files/Lisp/Hwk/timing.lisp".
+
+CL-USER> (comparefibonaccis)
+TAIL REC FIBONACCI 10
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   3.0e-5 seconds of user run time
+;   1.0e-6 seconds of system run time
+;   91,852 CPU cycles
+;   0 page faults and
+;   1,112 bytes consed.
+; 
+FIBONACCI 10
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   4.3e-4 seconds of user run time
+;   1.6e-5 seconds of system run time
+;   1,418,182 CPU cycles
+;   0 page faults and
+;   23,264 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 15
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   3.2e-5 seconds of user run time
+;   1.0e-6 seconds of system run time
+;   100,870 CPU cycles
+;   0 page faults and
+;   1,592 bytes consed.
+; 
+FIBONACCI 15
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.01 seconds of real time
+;   0.004828 seconds of user run time
+;   0.0 seconds of system run time
+;   15,406,380 CPU cycles
+;   0 page faults and
+;   259,288 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 20
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   4.4e-5 seconds of user run time
+;   0.0 seconds of system run time
+;   134,310 CPU cycles
+;   0 page faults and
+;   2,072 bytes consed.
+; 
+FIBONACCI 20
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.03 seconds of real time
+;   0.033388 seconds of user run time
+;   0.0 seconds of system run time
+;   106,587,214 CPU cycles
+;   0 page faults and
+;   2,876,840 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 25
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   3.0e-5 seconds of user run time
+;   0.0 seconds of system run time
+;   92,696 CPU cycles
+;   0 page faults and
+;   2,552 bytes consed.
+; 
+FIBONACCI 25
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.41 seconds of real time
+;   0.395195 seconds of user run time
+;   0.011969 seconds of system run time
+;   1,299,870,115 CPU cycles
+;   [Run times include 0.09 seconds GC run time]
+;   0 page faults and
+;   31,906,256 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 30
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   3.9e-5 seconds of user run time
+;   0.0 seconds of system run time
+;   120,524 CPU cycles
+;   0 page faults and
+;   2,952 bytes consed.
+; 
+FIBONACCI 30
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   3.7 seconds of real time
+;   3.681895 seconds of user run time
+;   0.012001 seconds of system run time
+;   11,793,208,899 CPU cycles
+;   [Run times include 0.14 seconds GC run time]
+;   0 page faults and
+;   353,847,104 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 35
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   4.2e-5 seconds of user run time
+;   0.0 seconds of system run time
+;   132,012 CPU cycles
+;   0 page faults and
+;   3,512 bytes consed.
+; 
+FIBONACCI 35
+Warning:  TIME form in a non-null environment, forced to interpret.
+Compiling entire form will produce more accurate times.
+
+; Evaluation took:
+;   40.54 seconds of real time
+;   40.489296 seconds of user run time
+;   0.04796 seconds of system run time
+;   129,433,608,439 CPU cycles
+;   [Run times include 1.05 seconds GC run time]
+;   0 page faults and
+;   3,924,225,448 bytes consed.
+; 
+=======================================================
+NIL
+CL-USER> 

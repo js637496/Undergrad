@@ -1,0 +1,105 @@
+(* 
+James Speers
+Dec 1 2018
+CSC 345-80
+taz/js637496/CSC345/ML-Project/project.sml 
+*)
+
+(* Datatype Definitions ------------------------------- *)
+(* a new type -- X, to test the polymorhism on *)
+(* defines data type X *)
+datatype X = A|B|C|D|E|F|G|H;
+(* defines binary tree data type*)
+datatype 'a BT = empty | bTree of 'a * 'a BT * 'a BT ;
+(*  TEST DATA - BINARY TREES -------------------------  *)
+val t1 =  bTree(1, 
+	       bTree(2,bTree(3,empty, empty), bTree(4,empty, empty)),
+	       bTree(5,bTree(6,empty, empty),bTree(7,empty, empty)));
+val t2 =  bTree(A, 
+	       bTree(B,bTree(D,empty, empty), bTree(E,empty, empty)),
+	       bTree(C,bTree(F,empty, empty),bTree(G,empty, empty)));
+val t3 =  bTree(1.22, bTree(2.33,empty, empty), bTree(3.44,empty,empty));
+val t4 =  bTree("A", 
+	       bTree("B",
+		    bTree("C",bTree("E",empty,empty), empty), 
+		    bTree("D",
+			bTree("F",empty,empty), 
+			bTree("G",bTree("H",empty,empty), empty))),
+	       bTree("I",
+		    bTree("J",empty, bTree("K",
+				      bTree("L",empty, empty),
+				      bTree("M",empty, empty))),
+		    empty));
+(*  End of Test Data --------------------------------- *)
+(* Binary tree Order functions ----------------------- *)
+(* Takes bTree and returns list in preOrder(root,left,right)  *)
+fun preOrder empty = []
+  | preOrder (bTree(root,left,right)) =
+    [root] @ preOrder left @ preOrder right;
+(* Takes bTree and returns list in inOrder(left,root,right)   *)
+fun inOrder empty = []  
+  | inOrder (bTree(root,left,right)) =
+    inOrder left @ [root] @ inOrder right;
+(* Takes bTree and returns list in postOrder(left,right,root) *)
+fun postOrder empty = [] 
+  | postOrder (bTree(root,left,right)) =
+    postOrder left @ postOrder right @ [root];
+(* End of Binary tree Order functions ----------------------- *)
+(* Print Functions *)
+fun printReal n = print(Real.toString n); (* prints Real to string *)
+fun printInt n = print(Int.toString n);   (* prints Int to string *)
+fun printX A = print "A"                  (* prints datatype X to string *)
+  | printX B = print "B"
+  | printX C = print "C"
+  | printX D = print "D"
+  | printX E = print "E"
+  | printX F = print "F"
+  | printX G = print "G"
+  | printX H = print "H";
+(* End of Print Functions -----------------------------------*)
+(* DisplayTree Functions *)
+(* prints tab according to a counter, if counter = 0 -> 1 tab, 
+   if counter = 2 -> 2 tabs, etc...*)
+fun tab 0 = print "  "
+  | tab counter  = (print "  "; tab (counter-1) );
+(* prints root with printfucntion, then newline *)
+fun displayNode (root, counter, printMode) = (tab(counter);
+					       printMode(root);
+					       print "\n");
+(* prints dash, then newline *)
+fun dash counter = (tab(counter);
+	      print "  -";
+	      print "\n");
+fun displayTreeIndent (empty,_,_) = ()
+    (* if root has no children, display root, *)
+  | displayTreeIndent (bTree(root,empty,empty),counter,printMode) =
+                                                  (displayNode(root,counter,printMode))
+    (* if root only has a left child, display root, 
+       recall displayTreeIndent with left being the new parent and counter+1,
+       prints dash in place of empty right child *)
+  | displayTreeIndent (bTree(root,left,empty),counter,printMode)  =
+                                                  (displayNode(root,counter,printMode);
+                                                  displayTreeIndent(left,(counter+1), printMode);
+						  dash (counter))    
+    (* if root only has a right child, display root,
+       recall displayTreeIndent with right being the new parent and counter+1 
+       prints dash in place of empty left child *)
+  | displayTreeIndent (bTree(root,empty,right),counter,printMode) =
+					          (displayNode(root,counter,printMode);
+					          dash (counter);
+					          displayTreeIndent(right,(counter+1),printMode))
+   (* if root has both children, display root,
+      recall displayTreeIndent with left being the new parent and counter+1 and
+      recall displayTreeIndent with right being the new parent and counter+1 *)
+  | displayTreeIndent (bTree(root,left,right),counter,printMode) =
+                                                  (displayNode(root,counter,printMode);
+                                                  displayTreeIndent(left,(counter+1),printMode);
+                                                  displayTreeIndent(right,(counter+1),printMode))
+(* displayTree function, takes bTree and printMode *)						      
+fun displayTree(tree,printMode) = displayTreeIndent(tree,0,printMode);
+(* End of DisplayTree Functions -------------------------------- *)
+(* Control Functions *)
+Control.Print.printDepth := 200;
+Control.Print.printLength := 200;
+Control.polyEqWarn := false;
+(* End of Control Functions ------------------------------------ *)

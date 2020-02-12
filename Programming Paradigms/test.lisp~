@@ -1,0 +1,4 @@
+(defun Length (L)
+  "Returns length of a list"
+  (cond ((endp L) 0)
+	(t (1+ (Length (rest L))))))

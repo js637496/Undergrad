@@ -1,0 +1,9 @@
+; SLIME 2015-08-24; Loading #P"/home/js637496/CSC345/Hmwk-1/homework.lisp".
+
+CL-USER> (sum 3 4)
+7
+CL-USER> (sum 3 -4)
+-1
+CL-USER> (sum 3 'a)
+NIL
+CL-USER> 

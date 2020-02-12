@@ -1,0 +1,170 @@
+; SLIME 2013-06-26
+CL-USER> (ld)
+; Loading #P"/home/wyatt/Classes/CSC345/Lisp/Projects/2016/mini-integrate.lisp".
+; LD
+; INDEF-INTEGRAL
+; VARIABLE-SYMBOLS
+; SUM-SYMBOL
+; QUOTIENT-SYMBOL
+; POWER-SYMBOL
+; SUM-OPERATOR
+; PRODUCT-OPERATOR
+; QUOTIENT-OPERATOR
+; SUM-OPERAND-1
+; SUM-OPERAND-2
+; VARIABLE-P
+; SUM-P
+; MAKE-VARIABLE-NAME
+; MAKE-SUM
+; MAKE-PRODUCT
+; MAKE-QUOTIENT
+; MAKE-POWER
+; F1
+; F2
+; F3
+; NICE-INTEGRATE
+; T1
+; T2
+; T3
+T
+CL-USER> (t1)
+FUNCTION: X
+VARIABLE: X
+  RESULT: (/ (** X 2) 2)
+
+NIL
+CL-USER> (t2)
+FUNCTION: (+ X X)
+VARIABLE: X
+  RESULT: (+ (/ (** X 2) 2) (/ (** X 2) 2))
+
+NIL
+CL-USER> (t3)
+FUNCTION: (+ (+ X X) (+ X X))
+VARIABLE: X
+  RESULT: (+ (+ (/ (** X 2) 2) (/ (** X 2) 2))
+             (+ (/ (** X 2) 2) (/ (** X 2) 2)))
+
+NIL
+CL-USER> (compile-file "mini-integrate" :block-compile nil)
+
+; Python version 1.1, VM version Intel x86/sse2 on 2016-10-16 12:30:15.
+; Compiling: /home/wyatt/Classes/CSC345/Lisp/Projects/2016/mini-integrate.lisp 2016-10-16 12:27:47
+
+; Converted LD.
+; Compiling DEFUN LD: 
+; Converted INDEF-INTEGRAL.
+; Compiling DEFUN INDEF-INTEGRAL: 
+; Byte Compiling Top-Level Form: 
+; Converted SUM-OPERATOR.
+; Compiling DEFUN SUM-OPERATOR: 
+; Converted PRODUCT-OPERATOR.
+; Compiling DEFUN PRODUCT-OPERATOR: 
+; Converted QUOTIENT-OPERATOR.
+; Compiling DEFUN QUOTIENT-OPERATOR: 
+; Converted SUM-OPERAND-1.
+; Compiling DEFUN SUM-OPERAND-1: 
+; Converted SUM-OPERAND-2.
+; Compiling DEFUN SUM-OPERAND-2: 
+; Converted VARIABLE-P.
+; Compiling DEFUN VARIABLE-P: 
+; Converted SUM-P.
+; Compiling DEFUN SUM-P: 
+; Converted MAKE-VARIABLE-NAME.
+; Compiling DEFUN MAKE-VARIABLE-NAME: 
+; Byte Compiling Top-Level Form: 
+; Converted MAKE-SUM.
+; Compiling DEFUN MAKE-SUM: 
+; Converted MAKE-PRODUCT.
+; Compiling DEFUN MAKE-PRODUCT: 
+; Converted MAKE-QUOTIENT.
+; Compiling DEFUN MAKE-QUOTIENT: 
+; Converted MAKE-POWER.
+; Compiling DEFUN MAKE-POWER: 
+; Byte Compiling Top-Level Form: 
+; Converted NICE-INTEGRATE.
+; Compiling DEFUN NICE-INTEGRATE: 
+; Converted T1.
+; Compiling DEFUN T1: 
+; Converted T2.
+; Compiling DEFUN T2: 
+; Converted T3.
+; Compiling DEFUN T3: 
+; Byte Compiling Top-Level Form: 
+
+; 
+; 
+; File: /home/wyatt/Classes/CSC345/Lisp/Projects/2016/mini-integrate.lisp
+
+; In: DEFUN MAKE-PRODUCT
+
+;   (LIST PRODUCT-SYMBOL F G)
+; Warning: Undefined variable PRODUCT-SYMBOL
+; 
+
+; In: LAMBDA (F G)
+
+;   (LIST PRODUCT-SYMBOL F G)
+; Warning: Undefined variable PRODUCT-SYMBOL
+; ; 
+
+; Warning: This variable is undefined:
+;   PRODUCT-SYMBOL
+; 
+
+; Compilation unit finished.
+;   3 warnings
+
+
+; mini-integrate.sse2f written.
+; Compilation finished in 0:00:00.
+#P"/home/wyatt/Classes/CSC345/Lisp/Projects/2016/mini-integrate.sse2f"
+NIL
+NIL
+CL-USER> (load *)
+; Loading #P"/home/wyatt/Classes/CSC345/Lisp/Projects/2016/mini-integrate.sse2f".
+T
+CL-USER> (trace indef-integral)
+(INDEF-INTEGRAL)
+CL-USER> (t3)
+  0: (INDEF-INTEGRAL (+ (+ X X) (+ X X)) X)
+    1: (INDEF-INTEGRAL (+ X X) X)
+      2: (INDEF-INTEGRAL X X)
+      2: INDEF-INTEGRAL returned (/ (** X 2) 2)
+      2: (INDEF-INTEGRAL X X)
+      2: INDEF-INTEGRAL returned (/ (** X 2) 2)
+    1: INDEF-INTEGRAL returned (+ (/ # 2) (/ # 2))
+    1: (INDEF-INTEGRAL (+ X X) X)
+      2: (INDEF-INTEGRAL X X)
+      2: INDEF-INTEGRAL returned (/ (** X 2) 2)
+      2: (INDEF-INTEGRAL X X)
+      2: INDEF-INTEGRAL returned (/ (** X 2) 2)
+    1: INDEF-INTEGRAL returned (+ (/ # 2) (/ # 2))
+  0: INDEF-INTEGRAL returned (+ (+ # #) (+ # #))
+FUNCTION: (+ (+ X X) (+ X X))
+VARIABLE: X
+  RESULT: (+ (+ (/ (** X 2) 2) (/ (** X 2) 2))
+             (+ (/ (** X 2) 2) (/ (** X 2) 2)))
+
+NIL
+CL-USER> (t2)
+  0: (INDEF-INTEGRAL (+ X X) X)
+    1: (INDEF-INTEGRAL X X)
+    1: INDEF-INTEGRAL returned (/ (** X 2) 2)
+    1: (INDEF-INTEGRAL X X)
+    1: INDEF-INTEGRAL returned (/ (** X 2) 2)
+  0: INDEF-INTEGRAL returned (+ (/ # 2) (/ # 2))
+FUNCTION: (+ X X)
+VARIABLE: X
+  RESULT: (+ (/ (** X 2) 2) (/ (** X 2) 2))
+
+NIL
+CL-USER> (t1)
+  0: (INDEF-INTEGRAL X X)
+  0: INDEF-INTEGRAL returned (/ (** X 2) 2)
+FUNCTION: X
+VARIABLE: X
+  RESULT: (/ (** X 2) 2)
+
+NIL
+CL-USER> 

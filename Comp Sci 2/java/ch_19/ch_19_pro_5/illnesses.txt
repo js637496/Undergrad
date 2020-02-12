@@ -1,0 +1,3 @@
+aids: death, runny nose, fever, cold feet,
+cold: runny nose, fever, stuffiness
+broken leg: broken leg,

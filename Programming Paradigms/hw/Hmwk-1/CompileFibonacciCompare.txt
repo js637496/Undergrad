@@ -1,0 +1,132 @@
+; SLIME 2015-08-24; Loading #P"/home/js637496/CSC345/Hmwk-1/homework.sse2f".
+; Loading #P"/home/js637496/CSC345/Course files/Lisp/Hwk/timing.sse2f".
+
+CL-USER> (comparefibonaccis)
+TAIL REC FIBONACCI 10
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   4.0e-6 seconds of user run time
+;   1.0e-6 seconds of system run time
+;   4,816 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+FIBONACCI 10
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   1.8e-5 seconds of user run time
+;   1.0e-6 seconds of system run time
+;   49,824 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 15
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   4.0e-6 seconds of user run time
+;   0.0 seconds of system run time
+;   5,152 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+FIBONACCI 15
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   1.4e-4 seconds of user run time
+;   7.0e-6 seconds of system run time
+;   457,136 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 20
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   4.0e-6 seconds of user run time
+;   0.0 seconds of system run time
+;   5,168 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+FIBONACCI 20
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   0.001595 seconds of user run time
+;   0.0 seconds of system run time
+;   5,082,864 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 25
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   5.0e-6 seconds of user run time
+;   0.0 seconds of system run time
+;   5,680 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+FIBONACCI 25
+
+; Evaluation took:
+;   0.01 seconds of real time
+;   0.008795 seconds of user run time
+;   0.0 seconds of system run time
+;   28,069,982 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 30
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   1.0e-6 seconds of user run time
+;   0.0 seconds of system run time
+;   1,382 CPU cycles
+;   0 page faults and
+;   0 bytes consed.
+; 
+FIBONACCI 30
+
+; Evaluation took:
+;   0.04 seconds of real time
+;   0.043571 seconds of user run time
+;   0.0 seconds of system run time
+;   139,098,990 CPU cycles
+;   0 page faults and
+;   32 bytes consed.
+; 
+=======================================================
+TAIL REC FIBONACCI 35
+
+; Evaluation took:
+;   0.0 seconds of real time
+;   1.0e-6 seconds of user run time
+;   0.0 seconds of system run time
+;   2,522 CPU cycles
+;   0 page faults and
+;   64 bytes consed.
+; 
+FIBONACCI 35
+
+; Evaluation took:
+;   0.48 seconds of real time
+;   0.482349 seconds of user run time
+;   1.17e-4 seconds of system run time
+;   1,540,403,040 CPU cycles
+;   0 page faults and
+;   64 bytes consed.
+; 
+=======================================================
+NIL
+CL-USER> 

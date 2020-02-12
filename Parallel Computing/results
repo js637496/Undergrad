@@ -1,0 +1,102 @@
+### On the head node
+# sudo su
+# cd /scratch
+# mpicc pi_mc.c -lm
+### from compute nodes
+# cd /scratch
+# mpirun --allow-run-as-root --np 12 --hostfile machine_list ./a.out 1000
+
+
+mpirun --np 2 --hostfile machine_list ./a.out 100
+the estimation of PI is: 3.120000
+ Process 0 took: 0.000012
+mpirun --np 2 --hostfile machine_list ./a.out 1000
+the estimation of PI is: 3.124000
+ Process 0 took: 0.000045
+mpirun --np 2 --hostfile machine_list ./a.out 10000
+the estimation of PI is: 3.145600
+ Process 0 took: 0.000350
+mpirun --np 2 --hostfile machine_list ./a.out 100000
+the estimation of PI is: 3.140120
+ Process 0 took: 0.002412
+mpirun --np 2 --hostfile machine_list ./a.out 1000000
+the estimation of PI is: 3.141516
+ Process 0 took: 0.023494
+mpirun --np 2 --hostfile machine_list ./a.out 10000000
+the estimation of PI is: 3.142081
+ Process 0 took: 0.217731
+mpirun --np 4 --hostfile machine_list ./a.out 1000
+the estimation of PI is: 3.144000
+ Process 0 took: 0.000048
+mpirun --np 4 --hostfile machine_list ./a.out 10000
+the estimation of PI is: 3.158400
+ Process 0 took: 0.000158
+mpirun --np 4 --hostfile machine_list ./a.out 100000
+the estimation of PI is: 3.129600
+ Process 0 took: 0.001303
+mpirun --np 4 --hostfile machine_list ./a.out 1000000
+the estimation of PI is: 3.140140
+ Process 0 took: 0.012229
+mpirun --np 4 --hostfile machine_list ./a.out 10000000
+the estimation of PI is: 3.141554
+ Process 0 took: 0.115134
+mpirun --np 6 --hostfile machine_list ./a.out 1000
+the estimation of PI is: 3.102000
+ Process 0 took: 0.000042
+mpirun --np 6 --hostfile machine_list ./a.out 10000
+the estimation of PI is: 3.112200
+ Process 0 took: 0.000115
+mpirun --np 6 --hostfile machine_list ./a.out 100000
+the estimation of PI is: 3.135720
+ Process 0 took: 0.000913
+mpirun --np 6 --hostfile machine_list ./a.out 1000000
+the estimation of PI is: 3.141480
+ Process 0 took: 0.008239
+mpirun --np 6 --hostfile machine_list ./a.out 10000000
+the estimation of PI is: 3.143086
+ Process 0 took: 0.080527
+mpirun --np 8 --hostfile machine_list ./a.out 1000
+the estimation of PI is: 3.192000
+ Process 0 took: 0.000025
+mpirun --np 8 --hostfile machine_list ./a.out 10000
+the estimation of PI is: 3.112000
+ Process 0 took: 0.000074
+mpirun --np 8 --hostfile machine_list ./a.out 100000
+the estimation of PI is: 3.138480
+ Process 0 took: 0.000684
+mpirun --np 8 --hostfile machine_list ./a.out 1000000
+the estimation of PI is: 3.143800
+ Process 0 took: 0.006205
+mpirun --np 8 --hostfile machine_list ./a.out 10000000
+the estimation of PI is: 3.142439
+ Process 0 took: 0.061801
+mpirun --np 10 --hostfile machine_list ./a.out 1000
+the estimation of PI is: 3.250000
+ Process 0 took: 0.000016
+mpirun --np 10 --hostfile machine_list ./a.out 10000
+the estimation of PI is: 3.099000
+ Process 0 took: 0.000075
+mpirun --np 10 --hostfile machine_list ./a.out 100000
+the estimation of PI is: 3.148700
+ Process 0 took: 0.000625
+mpirun --np 10 --hostfile machine_list ./a.out 1000000
+the estimation of PI is: 3.141020
+ Process 0 took: 0.006087
+mpirun --np 10 --hostfile machine_list ./a.out 10000000
+the estimation of PI is: 3.140706
+ Process 0 took: 0.065313
+mpirun --np 12 --hostfile machine_list ./a.out 1000
+the estimation of PI is: 3.144000
+ Process 0 took: 0.000024
+mpirun --np 12 --hostfile machine_list ./a.out 10000
+the estimation of PI is: 3.090000
+ Process 0 took: 0.000062
+mpirun --np 12 --hostfile machine_list ./a.out 100000
+the estimation of PI is: 3.129000
+ Process 0 took: 0.000518
+mpirun --np 12 --hostfile machine_list ./a.out 1000000
+the estimation of PI is: 3.143772
+ Process 0 took: 0.005050
+mpirun --np 12 --hostfile machine_list ./a.out 10000000
+the estimation of PI is: 3.142451
+ Process 0 took: 0.049787

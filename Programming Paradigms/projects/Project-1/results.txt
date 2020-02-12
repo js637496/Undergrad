@@ -1,0 +1,87 @@
+%%% This file has been annotated. All annotations begin with %%%
+%%% Project 1 - results.txt
+%%% James Speers
+%%% CSC 345-80
+%%% Oct 25 2018
+
+
+%%% Test 1
+CL-USER> (integrate '1 'X)
+X
+
+%%% Test 2
+CL-USER> (integrate '1 'Y 1 4)
+3
+
+%%% Test 3
+CL-USER> (integrate 'Z 'Z)
+(/ (EXPT Z 2) 2)
+
+%%% Test 4
+CL-USER> (integrate '(+ X 0) 'X)
+(/ (EXPT X 2) 2)
+
+%%% Test 5
+CL-USER> (integrate '(- X) 'X 1 3)
+-4
+
+%%% Test 6
+CL-USER> (integrate '(- - X) 'X 1 4)
+15/2
+
+%%% Test 7
+CL-USER> (integrate '(- X) 'X)
+(- (/ (EXPT X 2) 2))
+
+%%% Test 8
+CL-USER> (integrate '(- - X) 'X)
+(/ (EXPT X 2) 2)
+
+%%% Test 9
+CL-USER> (integrate '(- - - X) 'X)
+(- (/ (EXPT X 2) 2))
+
+%%% Test 10
+CL-USER> (integrate '(+ X (- X)) 'X)
+0
+
+%%% Test 11
+CL-USER> (integrate '(- (+ (- - X) X)) 'X 1 4)
+-15
+
+%%% Test 12
+CL-USER> (integrate '(+ (+ (- - X) (+ X 3)) 2) 'X 2 6)
+52
+
+%%% Test 13
+CL-USER> (integrate '(- X (EXPT X 3)) 'X)
+(- (/ (EXPT X 2) 2) (/ (EXPT X 4) 4))
+
+%%% Test 14
+CL-USER> (integrate '(- X (EXPT X 3)) 'X 2 5)
+-567/4
+
+%%% Test 15
+CL-USER> (integrate '(+ (+ X (- - - X)) (EXPT X 3)) 'X)
+(/ (EXPT X 4) 4)
+
+%%% Test 16
+CL-USER> (integrate '(+ (- X (- X)) (EXPT X 3)) 'X 2 3)
+85/4
+
+%%% Test 17
+CL-USER> (integrate '(EXPT X -1) 'X)
+(LOG X)
+
+%%% Test 18
+CL-USER> (integrate '(EXPT X -1) 'X 3 45)
+2.7080503
+
+%%% Test 19
+CL-USER> (integrate '(+ (+ X (- 5 X)) (EXPT X -1)) 'X)
+(+ (+ (/ (EXPT X 2) 2) (- (* 5 X) (/ (EXPT X 2) 2))) (LOG X))
+
+%%% Test 20
+CL-USER> (integrate '(+ (+ X (- 5 X)) (EXPT X -1)) 'X 5 217)
+1063.7704
+

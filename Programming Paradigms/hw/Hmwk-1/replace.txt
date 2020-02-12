@@ -1,0 +1,17 @@
+; SLIME 2015-08-24; Loading #P"/home/js637496/CSC345/Hmwk-1/homework.lisp".
+
+CL-USER> (my-replace 'a 'b '(a c a))
+(B C B)
+CL-USER> (my-replace 'a 'b '(c a c))
+(C B C)
+CL-USER> (my-replace 'a 'b '(a c (a)))
+(B C (B))
+CL-USER> (my-replace '(a) 'b '(a c (a)))
+(A C B)
+CL-USER> (my-replace '(a) '(x) '(a (a) (b (a))))
+(A (X) (B (X)))
+CL-USER> (my-replace '(a) '(x) '(a ((a) b (a)) b a))
+(A ((X) B (X)) B A)
+CL-USER> (my-replace 'a '(x y (z)) ' (a (a b (a)) b a))
+((X Y (Z)) ((X Y (Z)) B ((X Y (Z)))) B (X Y (Z)))
+CL-USER> 

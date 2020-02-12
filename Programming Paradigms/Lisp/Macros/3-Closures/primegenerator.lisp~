@@ -1,0 +1,80 @@
+;;; Duplicate the behaviour of java objects using a closure -- prime generators
+
+;;; A CLOSURE is a function with free variables created in an environment which binds those variables.
+
+;;; Closures are VERY important in functional programming languages. (Note the name of the PL "clojure")
+;;;============================================================================
+
+
+(defun primegenerator()
+  "Create functions with their own 'local variables' -- seed"
+  (let ((*seed* 1))
+    #'(lambda()
+	(setf *seed* (nextprimeafter *seed*)))))  
+
+
+(defun nextprimeafter(n)
+  "Return the next prime after n"
+  (cond ((< n 1) -1)
+	((= n 1) 2)
+	((= n 2) 3)
+	( t (let ((nextn (+ n 1 (mod n 2))))
+	      (if (prime-p nextn)
+		  nextn
+		(nextprimeafter nextn))))))
+
+(defun prime-p(n)
+  "Return whether n is a prime"
+  (labels ((isdivisibleby-p (i max n)
+	     (cond ((> i max) t)
+		   ((= (mod n i) 0) nil)
+		   ( t (isdivisibleby-p (+ i 2) max n)))))   
+    (cond ((<= n 1) nil)
+	  ((= n 2) t)
+	  ((= (mod n 2) 0) nil)
+	  (t (isdivisibleby-p 3 (floor(sqrt n)) n)))))
+
+
+;;;==================================================================================================
+
+;;; create an object (a function, in fact) named NEXTPRIME1, which when evaluated returns the next prime"
+(setf (symbol-function 'nextprime1) (primegenerator))
+
+;;; create another object (a function, in fact) named NEXTPRIME2, which when evaluated returns the next prime"
+(setf (symbol-function 'nextprime2) (primegenerator))
+
+
+;;;==================================================================================================
+;;; NOTE:
+;
+; (defun nextp1() (primegenerator))  ;; fails because every time the function NEXTP1 is evaluated it 
+;                                    ;; evaluates PRIMEGENERATOR again which always returns 2.  What 
+;                                    ;; we want, and it is done by the above SETFs, is to evaluate 
+;                                    ;; PRIMEGENERATOR, grab the function it returns, and bind it to 
+;                                    ;; a symbol.
+
+;; Attempted Example
+;; 
+;; CL-USER> (funcall (nextp1))
+;; 2
+;; CL-USER> (funcall (nextp1))
+;; 2
+;; CL-USER> (funcall (nextp1))
+;; 2
+
+
+;;;==================================================================================================
+;;; Examples
+ 
+(nextprime1)    ;; 2
+(nextprime1)    ;; 3
+(nextprime1)    ;; 5
+(nextprime1)    ;; 7
+(nextprime2)    ;; 2
+(nextprime2)    ;; 3
+(nextprime2)    ;; 5
+(nextprime1)    ;; 11
+(nextprime1)    ;; 13
+(nextprime2)    ;; 7
+
+;;;==================================================================================================

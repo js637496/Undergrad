@@ -1,0 +1,4 @@
+(defun mySum (n m)
+  "Returns sum of n m using recursion, 1+ and 1- but not general +"
+  (cond ((= m 0) n)
+	(if (> m 0) (mySum((1+ n) (1- m))) (mySum((1- n) (1+ m))))))
